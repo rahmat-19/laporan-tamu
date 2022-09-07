@@ -1,6 +1,6 @@
 document.addEventListener('keydown', (e) => {
     if (e.keyCode === 81 && e.altKey) {
-        window.location = "/history-pengunjung"
+        window.location = "/rahasia"
     }
     if (e.keyCode === 75 && e.altKey) {
         window.location = "/"

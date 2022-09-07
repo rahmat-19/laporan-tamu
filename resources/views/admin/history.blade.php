@@ -12,7 +12,7 @@
     <div class="row justify-content-md-center table-responsive p-5">
         <div class="buton-export">
 
-            <a href="{{Route('historyExport.tamu')}}" class="btn bg-success mb-3">Export</a>
+            <a href="{{Route('historyExport.user')}}" class="btn bg-success mb-3">Export</a>
         </div>
 
         <table class="table">

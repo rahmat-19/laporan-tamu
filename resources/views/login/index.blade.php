@@ -37,15 +37,27 @@
 
     <main class="form-signin">
         <img class="mb-4" src="/images/sengked.png" alt="" id="img-login">
-        <form>
-            <h1 class="h3 mb-3 fw-normal">Log-in Admin</h1>
+        <form action="{{Route('authenticate')}}" method="POST">
+            @csrf
+            <!-- <h1 class="h3 mb-3 fw-normal">Log-in Admin</h1> -->
 
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Username">
+                <input type="text" value="{{old('username')}}" autofocus class="form-control @error('username') is-invalid @enderror" name="username" id="floatingInput" placeholder="Username">
+                @error('username')
+                <div id="username" class="invalid-feedback mb-3">
+                    {{$message}}
+                </div>
+                @enderror
                 <label for="floatingInput">Username</label>
+
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" value="{{old('password')}}" class="form-control @error('password') is-invalid @enderror" name="password" id="floatingPassword" placeholder="Password">
+                @error('password')
+                <div id="password" class="invalid-feedback mb-3">
+                    {{$message}}
+                </div>
+                @enderror
                 <label for="floatingPassword">Password</label>
             </div>
 
